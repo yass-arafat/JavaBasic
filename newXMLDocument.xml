@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+  <persistence-unit name="GroupBuilderPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <class>com.groupbuilder.gb.domain.MaterialPhoto</class>
+        <class>com.groupbuilder.gb.domain.RCIAttachment</class>
+        <class>com.groupbuilder.gb.domain.RCIAttachmentType</class>
+        <class>com.groupbuilder.gb.domain.RCIAttachmentGroup</class>
+        <class>com.groupbuilder.gb.domain.Material</class>
+        <class>com.groupbuilder.gb.domain.MaterialUnit</class>
+        <class>com.groupbuilder.gb.domain.RCIMessage</class>
+        <class>com.groupbuilder.gb.domain.RCIUserRole</class>
+        <class>com.groupbuilder.gb.domain.PhotoEntity</class>
+        <class>com.groupbuilder.gb.domain.RCIEntity</class>
+        <class>com.groupbuilder.gb.domain.MaterialImage</class>
+        <class>com.groupbuilder.gb.domain.RCIEvent</class>
+        <class>com.groupbuilder.gb.domain.UserAccount</class>
+        <class>com.groupbuilder.gb.domain.MaterialCategory</class>
+        <class>com.groupbuilder.gb.domain.DemoVedio</class>
+        <class>com.groupbuilder.gb.domain.DemoVedioGroup</class>
+        <class>com.groupbuilder.gb.domain.GenericItem</class>
+        <class>com.groupbuilder.gb.domain.GenericRoom</class>
+        <class>com.groupbuilder.gb.domain.HotspotAttachment</class>
+        <class>com.groupbuilder.gb.domain.Partner</class>
+        <class>com.groupbuilder.gb.domain.FixedFurnitureMapping</class>
+        <class>com.groupbuilder.gb.domain.RCIOption</class>
+        <class>com.groupbuilder.gb.domain.ScrapbookHotspot</class>
+        <class>com.groupbuilder.gb.domain.Vendor</class>
+        <class>com.groupbuilder.gb.domain.WorksiteDiaryPage</class>
+        <class>com.groupbuilder.gb.domain.CheckListItem</class>
+        <class>com.groupbuilder.gb.domain.ExtraCost</class>
+        <class>com.groupbuilder.gb.domain.SignableDocument</class>
+        
+        <class>com.groupbuilder.gb.domain.Theme</class>
+        <class>com.groupbuilder.gb.domain.ThemeAndRciOption</class>
+        <class>com.groupbuilder.gb.domain.ApartmentProperties</class>
+				
+        <class>com.groupbuilder.gb.domain.ProjectSettings</class>
+
+        <class>com.groupbuilder.gb.calendar.domain.CalendarEvent</class>
+        <class>com.groupbuilder.gb.calendar.domain.Calendar</class>
+        <class>com.groupbuilder.gb.calendar.domain.CalendarResource</class>
+        <class>com.groupbuilder.gb.calendar.domain.CalendarReservation</class>
+        <class>com.groupbuilder.gb.calendar.domain.CalendarReservationType</class>
+        <class>com.groupbuilder.gb.calendar.domain.CalendarResourceAvailabilityPool</class>
+	
+        <class>com.groupbuilder.gb.domain.ProjectOrApartmentCategoryHidingStatus</class>
+        <class>com.groupbuilder.gb.domain.attributeconverter.HidingStatusConverter</class>
+        <class>com.groupbuilder.gb.domain.attributeconverter.ThemeMaterialSelectionModeConverter</class>
+        <class>com.groupbuilder.gb.domain.attributeconverter.ThemeSelectionModeConverter</class>
+        <class>com.groupbuilder.gb.domain.ProjectOrApartmentCategoryHidingStatus</class>
+        <class>com.groupbuilder.gb.domain.SignableDocument</class>
+	
+        <class>com.groupbuilder.gb.journey.models.JourneyPhase</class>
+		
+        <class>com.groupbuilder.gb.journey.models.JourneySection</class>
+        <class>com.groupbuilder.gb.journey.models.ContactsSection</class>
+        <class>com.groupbuilder.gb.journey.models.MaterialSelectionSection</class> 
+        <class>com.groupbuilder.gb.journey.models.ThreeDSection</class>
+        <class>com.groupbuilder.gb.journey.models.AttachmentsSection</class>
+        <class>com.groupbuilder.gb.journey.models.CalendarSection</class>
+	
+        <class>com.groupbuilder.gb.journey.models.JourneyAttachment</class>
+        <class>com.groupbuilder.gb.journey.models.JourneyLinkAttachment</class>
+        <class>com.groupbuilder.gb.journey.models.JourneyFileAttachment</class>
+        <class>com.groupbuilder.gb.journey.models.CheckListSection</class>
+        
+        <class>com.groupbuilder.gb.domain.VirtualRoomCard</class>
+        <class>com.groupbuilder.gb.domain.VirtualRoomCardItem</class>
+        <class>com.groupbuilder.gb.domain.BundleSubBundle</class>
+
+        <class>com.groupbuilder.gb.domain.AbstractImage</class>
+        <class>com.groupbuilder.gb.domain.CheckListItemInspectionType</class>
+        <class>com.groupbuilder.gb.domain.CheckListItemIssueType</class>
+        <class>com.groupbuilder.gb.domain.CoOwnersInformations</class>
+        <class>com.groupbuilder.gb.domain.MessageAttachment</class>
+        <class>com.groupbuilder.gb.domain.RCIMaterialOption</class>
+        
+    <properties>
+      <property name="eclipselink.cache.shared.default" value="false"/>
+      <property name="eclipselink.weaving" value="static"/>
+      
+<!--      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/auth0-merged?rewriteBatchedStatements=true&amp;characterEncoding=UTF-8&amp;connectionCollation=utf8_general_ci&amp;zeroDateTimeBehavior=convertToNull&amp;useUnicode=true&amp;connectionCollation=utf8_general_ci&amp;characterSetResults=utf8&amp;characterEncoding=utf8&amp;characterEncoding=UTF-8&amp;characterSetResults=UTF-8"/>
+      <property name="javax.persistence.jdbc.password" value="root"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>-->
+      
+       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://mysql:3306/auth0-merged?rewriteBatchedStatements=true&amp;characterEncoding=UTF-8&amp;connectionCollation=utf8_general_ci&amp;zeroDateTimeBehavior=convertToNull&amp;useUnicode=true&amp;connectionCollation=utf8_general_ci&amp;characterSetResults=utf8&amp;characterEncoding=utf8&amp;characterEncoding=UTF-8&amp;characterSetResults=UTF-8"/>
+       <property name="javax.persistence.jdbc.password" value="boj9nKKWTNpiYTFF"/>
+       <property name="javax.persistence.jdbc.user" value="developers"/>
+            
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="eclipselink.ddl-generation" value="none"/>
+      <property name="eclipselink.jdbc.cache-statements" value="true"/>
+      <property name="eclipselink.jdbc.cache-statements.size" value="200"/>
+      <property name="eclipselink.jdbc.batch-writing" value="JDBC"/>
+      <property name="eclipselink.jdbc.batch-writing.size" value="1000"/>
+      <property name="eclipselink.persistence-context.close-on-commit" value="true" />
+      <property name="eclipselink.persistence-context.flush-mode" value="commit" />
+      <property name="hibernate.connection.useUnicode" value="true"/>
+      <property name="hibernate.connection.characterEncoding" value="UTF-8"/>
+      <property name="hibernate.connection.charSet" value="UTF-8"/>
+      <!-- Configure connection pool. -->
+      <property name="eclipselink.connection-pool.default.initial" value="1" />
+      <property name="eclipselink.connection-pool.default.min" value="64"/>
+      <property name="eclipselink.connection-pool.default.max" value="200"/>
+      <!--            <property name="eclipselink.logging.level" value="FINE"/>
+            <property name="eclipselink.logging.parameters" value="true"/>-->
+    </properties>
+  </persistence-unit>
+  
+  
+  <!--common db connection setings-->
+  <persistence-unit name="GroupBuilderCommonDBPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>com.groupbuilder.gb.commondb.domain.UserAdditionalSettings</class>
+    <class>com.groupbuilder.gb.commondb.domain.UserNotificationSettings</class>
+    <class>com.groupbuilder.gb.commondb.domain.UserNote</class>
+    <class>com.groupbuilder.gb.commondb.domain.UserSignature</class>
+    <class>com.groupbuilder.gb.commondb.domain.UserRentalInfo</class>
+    <class>com.groupbuilder.gb.commondb.domain.TenantSettings</class>
+    <class>com.groupbuilder.gb.commondb.domain.OrganizationSettings</class>
+    
+    <properties>
+      <property name="eclipselink.cache.shared.default" value="false"/>
+      <property name="eclipselink.weaving" value="static"/>
+      
+<!--      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/gb-common-merged?rewriteBatchedStatements=true&amp;characterEncoding=UTF-8&amp;connectionCollation=utf8_general_ci&amp;zeroDateTimeBehavior=convertToNull&amp;useUnicode=true&amp;connectionCollation=utf8_general_ci&amp;characterSetResults=utf8&amp;characterEncoding=utf8&amp;characterEncoding=UTF-8&amp;characterSetResults=UTF-8"/>
+      <property name="javax.persistence.jdbc.password" value="root"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>-->
+      
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://mysql:3306/gb-common-merged?rewriteBatchedStatements=true&amp;characterEncoding=UTF-8&amp;connectionCollation=utf8_general_ci&amp;zeroDateTimeBehavior=convertToNull&amp;useUnicode=true&amp;connectionCollation=utf8_general_ci&amp;characterSetResults=utf8&amp;characterEncoding=utf8&amp;characterEncoding=UTF-8&amp;characterSetResults=UTF-8"/>
+      <property name="javax.persistence.jdbc.password" value="boj9nKKWTNpiYTFF"/>
+      <property name="javax.persistence.jdbc.user" value="developers"/>
+            
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="eclipselink.ddl-generation" value="none"/>
+            <property name="eclipselink.jdbc.cache-statements" value="true"/>
+            <property name="eclipselink.jdbc.cache-statements.size" value="200"/>
+            <property name="eclipselink.jdbc.batch-writing" value="JDBC"/>
+            <property name="eclipselink.jdbc.batch-writing.size" value="1000"/>
+            <property name="eclipselink.persistence-context.close-on-commit" value="true" />
+            <property name="eclipselink.persistence-context.flush-mode" value="commit" />
+            <property name="hibernate.connection.useUnicode" value="true"/>
+            <property name="hibernate.connection.characterEncoding" value="UTF-8"/>
+            <property name="hibernate.connection.charSet" value="UTF-8"/>
+            <!-- Configure connection pool. -->
+            <property name="eclipselink.connection-pool.default.initial" value="1" />
+            <property name="eclipselink.connection-pool.default.min" value="64"/>
+            <property name="eclipselink.connection-pool.default.max" value="200"/>
+      <!--            <property name="eclipselink.logging.level" value="FINE"/>
+            <property name="eclipselink.logging.parameters" value="true"/>-->
+    </properties>
+  </persistence-unit>
+</persistence>

@@ -1,0 +1,47 @@
+- According to biology POLYMORPHISM is an organism/species which have different forms. 
+e.g. A Deer IS-A Animal
+     A Deer IS-A Vegetarian
+     A Deer IS-A Deer
+     A Deer IS-A Object
+
+- There are two types of polymorphism – Compile Time Polymorphism and Runtime Polymorphism.
+
+-  Compile time polymorphism is achieved by METHOD OVERLOADING.
+...Suppose we have multiple draw methods with different parameters. draw(), draw(arg1), draw(arg1, arg2)
+...This is a case of method overloading because all the methods name is same and arguments are different.
+...Here compiler will be able to identify the method to invoke at compile time, hence it’s called compile time polymorphism.
+
+-  Runtime polymorphism is implemented when we have “IS-A” relationship between objects. This is also called as METHOD OVERRIDING
+...because subclass has to override the superclass method for runtime polymorphism. If we are working in terms of superclass, 
+...the actual implementation class is decided at runtime. Compiler is not able to decide which class method will be invoked. 
+...This decision is done at runtime, hence the name as runtime polymorphism or dynamic method dispatch. E.G.
+
+        public interface Shape {
+                public void draw();
+        }
+
+        public class Circle implements Shape{
+                @Override
+                public void draw(){
+                        System.out.println("Drwaing circle");
+                }
+        }
+
+        public class Square implements Shape {
+                @Override
+                public void draw() {
+                        System.out.println("Drawing Square");
+                }
+        }
+...Shape is the superclass and there are two subclasses Circle and Square.
+...In Any Class if you write
+
+        Shape sh = new Circle();
+        sh.draw();
+
+...the compiler will go to the interface method draw() and will see nothing is implemented here as the method is implemented
+...to the corresponding class e.g- here is Circle class. This polymorphism would be known in runtime and hence it is called
+...runtime polymorphism
+
+
+
