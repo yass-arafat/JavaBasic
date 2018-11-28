@@ -1,0 +1,30 @@
+                                                        MVP
+--------------------------------------------------------------------------------------------------------------------------------
+             VIEW                     VIEW                          VIEW                           VIEW
+              |                        |                             |                              |
+              |                        |                             |                              |
+       VIEW INTERFACE           VIEW INTERFACE                VIEW INTERFACE                 VIEW INTERFACE
+              |                        |                             |                              |
+              |                        |                             |                              |
+          PRESENTER                PRESENTER                     PRESENTER                      PRESENTER
+              \                        |                             |                              /
+                \                      |                             |                            /
+                  \                    |                             |                          /
+                    \                  |                             |                        /
+                      \  --------------|-----------------------------|--------------------- /
+                                       |                             |
+                                       |                             |
+                                    MODEL                           MODEL
+
+.Model - some kind of value object (VO)
+.View - represents or generates the UI
+.Presenters - business logic
+
+1. WHY MVP not MVC?
+----------------------
+
+- MVC has the `tight coupling` with the Controller and View as the Controller manipulates the view, taking care of how to render in the 
+view parts of the user actions and model. 
+
+- IN MVP, The Presenter and View can have a defined interface contracts to make them 'loose coupling'. For example you can create a View for 
+Java Swing UI and another for JavaFX UI. Or if the connection to the data source changes, then you just need update the presenter.

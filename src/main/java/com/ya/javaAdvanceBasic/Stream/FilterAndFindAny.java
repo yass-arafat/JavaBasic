@@ -20,7 +20,6 @@ public class FilterAndFindAny {
     
     public static void main(String[] args) {
         findAndReturnRequiredElement();
-        
     }
     
     /**

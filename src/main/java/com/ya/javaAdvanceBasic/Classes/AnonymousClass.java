@@ -6,7 +6,7 @@
 package com.ya.javaAdvanceBasic.Classes;
 
 /**
- *
+ * the process/pattern is used here is known as Command Pattern
  * @author Yassir Arafat
  */
 public class AnonymousClass {
