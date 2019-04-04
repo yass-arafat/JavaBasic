@@ -21,7 +21,7 @@ interface LoginPresenter {
 
     void setOnLogin(Runnable onLogin);
 
-    void run();
+    void present();
 
     void login();
 }

@@ -1,0 +1,92 @@
+Web Services : 1) SOAP services 2) REST services
+
+
+In General:
+------------------
+- SOAP and REST are two API styles that approach the question of data transmission from a different point of view.
+- SOAP was the go-to messaging protocol that almost every web service used.
+- However, enterprise users still frequently choose SOAP for their web services.
+- As these days developers need to build lightweight web and mobile applications, the more flexible REST architecture quickly
+ gained popularity. 
+- In 2018, most public web services provided REST APIs and transfer data in the compact and easy-to-use JSON data-interchange
+ format.
+- According to Nordic APIs, REST is almost always better for web-based APIs, as it makes data available as resources (e.g. user)
+ as opposed to services (e.g. getUser) which is how SOAP operates.
+
+
+SOAP :
+-------------------
+- SOAP is a "standardized protocol" that sends messages using other protocols such as HTTP and SMTP.
+- As SOAP is an official protocol, it comes with strict rules and "advanced security features" such as built-in ACID
+ compliance and authorization.
+- Higher complexity, it requires more bandwidth and resources which can lead to slower page load times.
+- It’s a messaging protocol for interchanging data in a decentralized and distributed environment.
+- SOAP can work with any application layer protocol, such as HTTP, SMTP, TCP, or UDP.It returns data to the receiver in XML format.
+- Security, authorization, and error-handling are built into the protocol and, unlike REST, it doesn’t assume direct
+ point-to-point communication.
+
+A SOAP message is, in fact, an ordinary XML file that consists of the following parts:
+
+1. Envelope (required) – This is the starting and ending tags of the message.
+2. Header (optional) – It contains the optional attributes of the message. It allows you to extend a SOAP message in a modular and decentralized way.
+3. Body (required) – It contains the XML data that the server transmits to the receiver.
+4. Fault (optional) – It carries information about errors occurring during processing the message.
+
+EXAMPLE:
+----------
+<env:Envelope xmlns:env="http://www.w3.org/2003/05/soap-envelope">
+  <env:Header>
+    <n:alertcontrol xmlns:n="http://example.org/alertcontrol">
+      <n:priority>1</n:priority>
+      <n:expires>2001-06-22T14:00:00-05:00</n:expires>
+    </n:alertcontrol>
+  </env:Header>
+  <env:Body>
+    <m:alert xmlns:m="http://example.org/alert">
+      <m:msg>Pick up Mary at school at 2pm</m:msg>
+    </m:alert>
+  </env:Body>
+</env:Envelope>
+
+
+What’s the main reason to use SOAP?
+----------------------------------------
+- In 2019, SOAP will likely continue to be used for enterprise-level web services that require high security
+ and complex transactions.
+- APIs for financial services, payment gateways, CRM software, identity management, and telecommunication services
+ are commonly used examples of SOAP. 
+- One of the most well known SOAP APIs is PayPal’s public API that allows you to accept PayPal and credit card payments,
+ add a PayPal button to your website, let users log in with PayPal, and perform other PayPal-related actions.
+
+
+REST:
+-----------------
+- REST is not a protocol but an "architectural style".
+- The REST architecture lays down a set of guidelines you need to follow if you want to provide a RESTful web service,
+ for example, "stateless existence" and the use of HTTP status codes.
+- REST was created to address the problems of SOAP. Therefore it has a more flexible architecture. It consists of only 
+loose guidelines and lets developers implement the recommendations in their own way.
+- It allows different messaging formats, such as HTML, JSON, XML, and plain text, while SOAP only allows XML.
+- REST is also a more lightweight architecture, so RESTful web services have a better performance. Because of that,
+ it has become incredibly popular in the mobile era where even a few seconds matter a lot (both in page load time and revenue).
+
+To create a REST API, you need to follow six architectural constraints:
+---------------------------------------------------------------------------------
+
+1. Uniform interface – Requests from different clients should look the same, for example, the same resource shouldn’t have
+ more than one URI.
+
+2. Client-server separation – The client and the server should act independently. They should interact with each other
+ only through requests and responses.
+
+3. Statelessness – There shouldn’t be any server-side sessions. Each request should contain all the information
+ the server needs to know.
+
+4. Cacheable resources – Server responses should contain information about whether the data they send is cacheable or not.
+ Cacheable resources should arrive with a version number so that the client can avoid requesting the same data more than once.
+
+5. Layered system – There might be several layers of servers between the client and the server that returns the response.
+ This shouldn’t affect either the request or the response.
+
+6. Code on demand [optional] – When it’s necessary, the response can contain executable code (e.g., JavaScript within an
+ HTML response) that the client can execute.

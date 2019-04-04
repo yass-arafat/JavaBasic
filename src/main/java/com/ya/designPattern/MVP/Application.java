@@ -42,7 +42,7 @@ public class Application {
                         JOptionPane.showMessageDialog(null, "Welcome user!");
                     }
                 });
-                loginPresenter.run();
+                loginPresenter.present();
             }
         });
     }

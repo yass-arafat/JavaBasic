@@ -26,5 +26,5 @@
 - MVC has the `tight coupling` with the Controller and View as the Controller manipulates the view, taking care of how to render in the 
 view parts of the user actions and model. 
 
-- IN MVP, The Presenter and View can have a defined interface contracts to make them 'loose coupling'. For example you can create a View for 
+- IN MVP, The Presenter and View can have a defined INTERFACE contracts to make them 'loose coupling'. For example you can create a View for 
 Java Swing UI and another for JavaFX UI. Or if the connection to the data source changes, then you just need update the presenter.

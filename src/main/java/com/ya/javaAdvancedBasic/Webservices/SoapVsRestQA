@@ -1,0 +1,26 @@
+Q - Can I design a RESTful service based on some other protocol (such as raw TCP) Or does it must to use HTTP in REST?
+A - The short answer is that a RESTful service does generally imply HTTP, but it's not strictly necessary.
+    The wikipedia entry includes a section on implementations outside the web, though it's pretty brief and really only talks about Common Management Information Protocol (CMIP).
+    Realistically, to most developers, RESTful services operate over HTTP.
+
+Q - Why/How SOAP is Stateful?
+A - Basically Stateful means that server stores information about the client and uses that information over a series of requests.
+    So performing one request is dependant upon the state of some other request (e.g. previous). Implementing this is possible with
+    http protocols.
+    So you can have stateful or stateless SOAP - it's only a matter of how you design it.
+    Also please note that comparing SOAP and REST is not really correct. The first one is basically Protocol
+    (or at least it's trying to be) and REST is just a architecture pattern/style.
+
+Q - Which is more secure: SOAP OR REST?
+A - REST security is transport dependent while SOAP security is not.
+    REST inherits security measures from the underlying transport while SOAP defines its own via WS-Security.
+    When we talk about REST, over HTTP - all security measures applied HTTP are inherited and this is known as transport level 
+    security.
+    Transport level security, secures your message only while its on the wire - as soon as it leaves the wire, the message is 
+    no more secured.
+    But, with WS-Security, its message level security - even though the message leaves the transport channel it will be still 
+    protected. Also - with message level security you can partly encrypt the message [not the entire message, but only the parts
+    you want] - but with transport level security you can't do it.
+    WS-Security has measures for authentication, integrity, confidentiality and non-repudiation while SSL doesn't support non
+    repudiation [with 2-legged OAuth it does].
+    In performance-wise SSL is very much faster than WS-Security.

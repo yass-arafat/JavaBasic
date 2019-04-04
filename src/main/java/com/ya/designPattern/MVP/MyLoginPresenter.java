@@ -41,7 +41,7 @@ class MyLoginPresenter implements LoginPresenter {
     }
 
     @Override
-    public void run() {
+    public void present() {
         loginModel.setUser("previousUser");
         loginView.setPresenter(this);
         loginView.updateViewFromModel();

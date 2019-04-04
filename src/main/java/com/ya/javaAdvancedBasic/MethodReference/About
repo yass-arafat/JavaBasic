@@ -1,0 +1,53 @@
+In Java, we can use references to objects, either by creating new objects:
+
+List list = new ArrayList();
+store(new ArrayList());
+
+Or by using existing objects:
+
+List list2 = list;
+isFull(list2);
+
+But what about a reference to a method?
+
+If we only use a method of an object in another method, we still have to PASS THE FULL OBJECT as an argument. 
+Wouldn't it be more practical to just pass the method as an argument? For example:
+
+isFull(list.size);
+
+In Java 8, thanks to lambda expressions, we can do something like this. We can use methods as if they were objects, or primitive values.
+
+We know that we can use lambda expressions instead of using an anonymous class. But sometimes, the lambda expression is really just a call
+to some method, for example:
+
+Consumer<String> c = s -> System.out.println(s);
+
+To make the code clearer, you can turn that lambda expression into a method reference:
+
+Consumer<String> c = System.out::println;
+
+In a method reference, you place the object (or class) that contains the method before the :: operator and the name of the method after it
+without arguments.
+
+A method reference can't be used for any method. They can only be used to replace a single-method lambda expression.
+
+So to use a method reference, you first need a lambda expression with one method. And to use a lambda expression, you first need a functional interface, an interface with just one abstract method.
+
+In other words:
+
+Instead of using
+AN ANONYMOUS CLASS
+you can use
+A LAMBDA EXPRESSION
+And if this just calls one method, you can use
+A METHOD REFERENCE
+
+Types of Method References:
+Type                                                Syntax                        Method Reference          Lambda expression
+-------                                         -------------------------         ------------------    -------------------
+1.Reference to a static method                        Class::staticMethod           String::valueOf           s -> String.valueOf(s)
+2.Reference to an instance method
+  of a particular object                              instance::instanceMethod      s:toString                () -> “string”.toString()
+3.Reference to an instance method
+  of an arbitrary object of a particular type         Class:instanceMethod          String::toString          s -> s.toString()
+4.Reference to a constructor                          Class::new                    String::new               () -> new String()
