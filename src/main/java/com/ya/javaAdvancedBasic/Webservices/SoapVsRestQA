@@ -1,3 +1,21 @@
+
+Q - What does this means???? "Rest is an architectural style and is not a protocol."
+
+A - Abstraction vs Implementation. For example, REST is an architectural style. HTTP is a protocol. Architecture describes,
+    protocols prescribe.
+
+A - A protocol usually describes the exact messages (or parts thereof) the two (or more) peers have to exchange. Specifying also the
+    choreography how these messages are exchanged and what they mean.
+    
+    An architectural style (like REST) does not describe messages at all, but specifies requirements (architectural constraints) that
+    the messages, choreography or parts of the system have to fulfill.
+    
+    So while a protocol might say: "use JSON in the following format to request a quote". An architectural style just says:
+    "clients can contact servers, but not the other way". It's a completely different level.
+
+    Here is how they are related: An architectural style is like a template for a specific architecture. A specific architecture in turn defines the protocols between components.
+
+
 Q - Can I design a RESTful service based on some other protocol (such as raw TCP) Or does it must to use HTTP in REST?
 A - The short answer is that a RESTful service does generally imply HTTP, but it's not strictly necessary.
     The wikipedia entry includes a section on implementations outside the web, though it's pretty brief and really only talks about Common Management Information Protocol (CMIP).

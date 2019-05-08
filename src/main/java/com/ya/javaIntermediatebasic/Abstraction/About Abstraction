@@ -1,3 +1,7 @@
 - Abstraction is the concept of hiding the internal details and describing things in simple terms. 
 - For example, a method that adds two integers. The method internal processing is hidden from outer world.
 - There are many ways to achieve abstraction in object oriented programming, such as encapsulation and inheritance.
+
+
+
+https://stackoverflow.com/questions/13670991/interview-can-we-instantiate-abstract-class

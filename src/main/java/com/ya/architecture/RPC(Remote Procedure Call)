@@ -1,0 +1,59 @@
+Q. What is RPC?
+
+A.  - A remote procedure call is an *interprocess communication technique* that is used for client-server based applications.
+    It is also known as a subroutine call or a function call.
+
+    - A client has a request message that the RPC translates and sends to the server.
+    This request may be a procedure or a function call to a remote server.***
+    When the server receives the request, it sends the required response back to the client.
+    The client is blocked while the server is processing the call and only resumed execution after the server is finished.***
+
+    - The main components of RPC architecture are Clent, Client Stub, Server, Server Stub and RPC Runtime.
+
+                                        Execution Process
+                                    -----------------------
+
+
+    1) The RPC operation begins in the client machine by client program, as a client application makes an RPC(procedure call) to its stub.
+
+    2) The Client stub packs the parameters to be sent to server process in the form of a message.
+
+    3) The RPC Runtime at the client forwards the message to server through the communication network.
+
+    4) RPC Runtime component at server side forwards the message to server stub.
+
+    5) Server stub unpacks the parameters and hands over the parameters to the remote procedure.
+
+    6) The remote procedure gets executed, and results are sent back to the client in the reverse direction
+
+
+
+- Why we need it?
+
+- What are the backlogs of it?
+
+MORE.....
+
+Q. Is Java Remote Procedure Call Dead in the REST Age?
+A. - https://dzone.com/articles/is-java-remote-procedure-call-dead-in-the-rest-age
+
+Q. What is the difference between Java RMI and RPC?
+A. - https://stackoverflow.com/questions/2728495/what-is-the-difference-between-java-rmi-and-rpc
+
+Q. Web service differences between REST and RPC
+A. - https://stackoverflow.com/questions/26830431/web-service-differences-between-rest-and-rpc
+
+Placing an Order:
+
+    RPC: http://MyRestaurant:8080/Orders/PlaceOrder (POST: {Tacos object})
+    REST: http://MyRestaurant:8080/Orders/Order?OrderNumber=asdf (POST: {Tacos object})
+
+Retrieving an Order:
+
+    RPC: http://MyRestaurant:8080/Orders/GetOrder?OrderNumber=asdf (GET)
+    REST: http://MyRestaurant:8080/Orders/Order?OrderNumber=asdf (GET)
+
+Updating an Order:
+
+    RPC: http://MyRestaurant:8080/Orders/UpdateOrder (PUT: {Pineapple Tacos object})
+    REST: http://MyRestaurant:8080/Orders/Order?OrderNumber=asdf (PUT: {Pineapple Tacos object})

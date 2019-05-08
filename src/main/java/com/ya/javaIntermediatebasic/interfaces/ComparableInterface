@@ -1,0 +1,36 @@
+- Java Comparable interface is used to order the objects of the user-defined class.
+- contains only one method named compareTo(Object).
+
+
+                                        compareTo(Object obj) method
+
+                                      public int compareTo(Object obj): 
+It is used to compare the current object with the specified object. It returns
+
+    positive integer, if the current object is greater than the specified object.
+    negative integer, if the current object is less than the specified object.
+    zero, if the current object is equal to the specified object.
+
+
+- Several other classes from Java API relies on this interface for their behavior, for example Arrays.sort(), Collections.sort()
+  uses this method to sort objects contained in Array and Collection in their natural order. Similarly SortedSet and SortedMap
+  implementation e.g. TreeSet and TreeMap also uses compareTo() method to keep their elements sorted.
+
+
+                            public int compareTo(Student st){  
+                                if(age==st.age)  
+                                    return 0;  
+                                else if(age>st.age)  
+                                    return 1;  
+                                else  
+                                    return -1;  
+                            } 
+
+input:              ArrayList<Student> al=new ArrayList<Student>();  
+                    al.add(new Student(101,"Vijay",23));  
+                    al.add(new Student(106,"Ajay",27));  
+                    al.add(new Student(105,"Jai",21));  
+output:
+                    105 Jai 21
+                    101 Vijay 23
+                    106 Ajay 27

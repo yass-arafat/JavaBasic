@@ -1,0 +1,120 @@
+                                                    BASIC
+
+Learn more https://javarevisited.blogspot.com/2011/08/enum-in-java-example-tutorial.html
+- In Java, Enum is a powerful data type. There are a lot of places you can use Enum to take advantage of it, like in a
+  Static Factory method. There, it's a wise decision to pass the Enum type rather than passing a String.
+- Enumerations serve the purpose of representing a group of named constants in a programming language. For example the 4 suits
+  in a deck of playing cards may be 4 enumerators named Club, Diamond, Heart, and Spade, belonging to an enumerated type named Suit.
+
+- Java enums are more powerful than C/C++ enums . In Java, we can also add ***variables, methods and constructors to it***.
+  The main objective of enum is to define our own data types(Enumerated Data Types).
+
+                                                    Enum Advantages
+
+- In a Static Factory method??, passing Enum as an argument makes the method typesafe. Method users can’t pass an arbitrary
+  value to this method.
+- Instead of using bit fields, using Enum and EnumSet makes the code cleaner and easy to maintain.
+- Using Enum can achieve a Singleton pattern, which is inherently Thread Safe*****.
+- You can also use them to get rid of If/Switch statements.
+
+                                                    Disadvantage
+
+- We cannot extend Enum. but  we can emulate the extensibility in Enum, and we have to do it in a strategic way.
+
+For clearer view of Achieving enum Extensibility check this https://dzone.com/articles/java-extensible-enum-with-interface
+
+                                                    DECLARATION
+
+- Enum declaration can be done outside a Class or inside a Class but not inside a Method.
+
+Important points of enum :
+
+- Every enum can internally implemented by using Class.
+        
+        /* internally above enum Color is converted to
+        class Color
+        {
+            public static final Color RED = new Color();
+            public static final Color BLUE = new Color();
+            public static final Color GREEN = new Color();
+        }*/
+
+- Every enum constant represents an OBJECT of type enum.
+
+- Every enum constant is always implicitly public static final. Since it is static, we can access it by using enum Name.
+  Since it is final, we can’t create child enums******.
+
+- We can add key value in enum like this
+        
+        public enum UserGroupLevel {
+            // this is enum object
+            UNDEFINED("common_UserLevels_Undefined", -1),
+            VISITOR("common_UserLevels_Visitor", 1);
+            
+            // as we have two arg here in an enum object we need to create two variable to access them
+            public String caption;
+            public int level;
+            
+            // defining variable in the contractor, as caption first in the object so caption should be first in the contractor too
+            public UserGroupLevel(String caption, int level){
+                this.caption = caption;
+                this.level = level;
+            }
+
+            @Override
+            public String toString() {
+                return caption;
+            }
+        }
+
+
+- Enum type can be passed as an argument to switch statement.
+
+        // An Enum class 
+        enum Day 
+        { 
+                SUNDAY, MONDAY, TUESDAY, WEDNESDAY, 
+                THURSDAY, FRIDAY, SATURDAY; 
+        } 
+
+        // Driver class that contains an object of "day" and 
+        // main(). 
+        public class Test 
+        { 
+        	Day day; 
+
+                // Constructor 
+                public Test(Day day) 
+                { 
+                        this.day = day; 
+        	} 
+
+                // Prints a line about Day using switch 
+                public void dayIsLike() 
+                { 
+                        switch (day) 
+                        { 
+                        case MONDAY: 
+                                System.out.println("Mondays are bad."); 
+                                break; 
+                        case FRIDAY: 
+                                System.out.println("Fridays are better."); 
+                                break; 
+                        case SATURDAY: 
+                        case SUNDAY: 
+                                System.out.println("Weekends are best."); 
+                                break; 
+                        default: 
+                                System.out.println("Midweek days are so-so."); 
+                                break; 
+                        } 
+                } 
+
+                // Driver method 
+                public static void main(String[] args) 
+                {   
+                        String str = "MONDAY"; 
+                        Test t1 = new Test(Day.valueOf(str)); 
+                        t1.dayIsLike(); 
+                } 
+        } 

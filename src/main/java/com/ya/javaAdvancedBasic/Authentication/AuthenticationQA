@@ -1,0 +1,72 @@
+Q. -  Is there a difference between authentication and authorization?
+A. -  [Authentication is that whether you are letting a person in your house or not and Authorization is how much resource access
+    this person will get]
+    Authentication: Authentication is the mechanism whereby system securely identify their users. System needs answer of following
+    ques.
+    >  Who is the user? [এইটা ক্যা?]
+    >  Is the user really who he/she represents himself to be?[এইটা কি আসলেই সে?]
+    Authorization: Authorization is the mechanism whereby system identify what level of resource access a particular user should get.
+    Authorization systems provide answers to the questions: 
+    >  Is user X authorized to access resource R?
+    >  Is user X authorized to perform operation P?
+    >  Is user X authorized to perform operation P on resource R?
+
+Q. - Did you know about any API Authentication Methods. Can you explain some?
+A. - I am acquainted with 4 common API Authentication Methods. May be there’s are more. These are  HTTP Basic Authentication,
+    API Keys,  OAuth, Token based Authentication(JWT).
+
+    There are two types of Authentication supports by HTTP Protocol. 1) basic 2) digest.
+
+    HTTP Basic Authentication: 
+
+    >  In this authentication  an HTTP user agent simply provides a username and password to prove their authentication. 
+    >  This approach does not require cookies, session IDs, login pages, and other such specialty solutions, and because it uses the
+    HTTP header itself, there’s no need to handshakes or other complex response systems. 
+
+    WEAKNESS:
+    - It never blocks multiple re-tries. that means you can put wrong username and password as many times you want. but the server will never block you for this. which should not be a secured authentication way.
+    - It transmit our username and password in the form of Plain text. for that attackers can easily attack and get the username and password.
+     
+    USAGE:
+    -  In an internal network, especially in IoT situations where speed is of no essence, having an HTTP Basic Authentication system is acceptable as a balance between cost of implementation and actual function. 
+
+    API Keys:
+
+    OAuth:
+    - some says Open Authorization and some says open Authentication
+    - To provide SSO experience among various computer OAuth has been discovered.
+    - You can use your password, phone, digital certificate, biometric identity, two-factor authentication (2FA) or multi-factor
+    authentication (MFA) SSO solution to log onto one place, and not have to put in another access credential all day to access
+    a bunch of others.
+    - OAuth is an open-standard authorization protocol or framework that describes how unrelated servers and services can safely allow
+      authenticated access to their assets without actually sharing the initial, related, single logon credential. 
+      In authentication parlance, this is known as secure, third-party, user-agent, delegated authorization.***
+    - OAuth only works using HTTPS *****
+
+Q. - How OAuth works???
+A. - 
+    1.  The first website connects to the second website on behalf of the user, using OAuth, providing the user’s verified identity.
+    2.  The second site generates a one-time token and a one-time secret unique to the transaction and parties involved.
+    3.  The first site gives this token and secret to the initiating user’s client software.
+    4.  The client’s software presents the request token and secret to their authorization provider (which may or may not be the
+        second site).
+    5.  If not already authenticated to the authorization provider, the client may be asked to authenticate. After authentication,
+        the client is asked to approve the authorization transaction to the second website.
+    6.  The user approves (or their software silently approves) a particular transaction type at the first website.
+    7.  The user is given an approved access token (notice it’s no longer a request token).
+    8.  The user gives the approved access token to the first website.
+    9.  The first website gives the access token to the second website as proof of authentication on behalf of the user.
+    10. The second website lets the first website access their site on behalf of the user.
+    11. The user sees a successfully completed transaction occurring.
+    12. OAuth is not the first authentication/authorization system to work this way on behalf of the end-user. In fact, many
+        authentication systems, notably Kerberos, work similarly. What is special about OAuth is its ability to work across the web and its wide adoption. It succeeded with adoption rates where previous attempts failed (for various reasons).
+
+
+Q. - What is HTTP Header? Give an Example.
+A. - 
+    HTTP headers are Key/Value pairs message which are being passed during an HTTP request or response messages over the server/client. e.g.
+    Key:  Content-Type     Value:  application/json or xml.
+    Key:  Accept                  Value:  text/plain etc. etc.
+    the message is passed like this. Content-Type: application/json
+    for more http header fields pls go to postman and click Header to see many header field.
+

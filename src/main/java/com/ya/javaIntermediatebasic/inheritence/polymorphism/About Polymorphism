@@ -3,6 +3,10 @@ e.g. A Deer IS-A Animal
      A Deer IS-A Vegetarian
      A Deer IS-A Deer
      A Deer IS-A Object
+- Polymorphism is an object oriented or OOPS concept like Abstraction, Encapsulation or Inheritance which facilitate the 
+  use of the interface and allows Java program to take advantage of dynamic binding in Java. Polymorphism is also a way through
+  which a Type can behave differently than expected based upon which kind of Object it is pointing. Overloading and overriding
+  are two forms of Polymorphism available in Java.
 
 - There are two types of polymorphism – Compile Time Polymorphism and Runtime Polymorphism.
 

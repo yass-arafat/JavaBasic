@@ -1,0 +1,35 @@
+                                                Information
+- Both are part of JVM and both consumers memory allocated to the Java process
+- Heap memory(main memory) is shared by all threads of Java application but Stack memory is local to each thread.
+- Objects are created in heap memory but method frames/stack frames?? are stored in Stack memory
+- Size of heap space is much bigger than the small size of Stack in Java.
+
+1) Size
+- Heap space in Java is much bigger than the Stack memory. This is partly due to the fact that whenever a new thread is
+  created in JVM, separate stack memory is allocated to them.
+
+2) Resizing
+- JVM allows you to resize both heap and stack in Java, though you need to use different JVM flags for that.
+- You can use -Xms and -Xmx to specify the starting and maximum heap memory in Java. Similarly, you can use the -Xss to
+  specify stack size of individual threads in JVM.
+
+3) Usage
+- Heap memory is used to store objects in Java. No matter where you create object e.g. inside a method, a class or
+  a code block, they are always created in heap space and memory is allocated from the heap.
+- *****One little exception of that is String literals which live in String pool, which was not part of the heap until Java 7.
+  Earlier String pool was created on metaspace, which was separate memory are in JVM used to store class metadata,
+  but from JDK 7 onwards String pool is merged into heap space.
+- Stack memory is used to store local variables e.g. primitive int and boolean variables, method frames and call stack??.
+
+4) Visibility
+- Heap memory is shared by all threads hence it is also known as the main memory but stack memory is local to threads and local variable created there was not visible to others.
+
+5) Heap and Stack Memory Errors
+- a faulty recursive algorithm can quickly make Stack memory filled up with recursive method calls in that case you will see
+  java.lang.StackOverFlowError.
+- when there is no more space left in heap to allocate a new object than you will see the OutOfMemoryError in java
+  e.g. java.lang.OutOfMemoryError: Java Heap Space.
+
+
+
+

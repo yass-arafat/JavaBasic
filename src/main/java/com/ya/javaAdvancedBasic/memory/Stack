@@ -1,0 +1,45 @@
+- all computer programming languages there is this thing called “the stack,” also known as the “call stack.”
+            - Official Java/JVM “stack” definition
+              "Each JVM thread has a private Java virtual machine stack, created at the same time as the thread. A JVM stack
+              stores frames, also called “stack frames”. A JVM stack is analogous(comparable, parallel, similar) 
+              to the stack of a conventional language such as C — it holds local variables and partial results, and plays
+              a part in method invocation and return."
+                    The Stack                          new Thread
+                ----------------                    ----------------
+               |                |                  |                |
+               |  ------------  |                  |                |
+               | | stack frame| |                  |   The Stack    |
+               | | stack frame| |                  |                |
+               | | stack frame| |                  |                |
+               |  ------------  |                  |                |
+                ----------------                    ----------------
+- “When a new thread is launched, the JVM creates a new stack for the thread. A Java stack stores a thread’s
+    state in discrete frames. ***The JVM only performs two operations directly on Java stacks: it pushes and pops frames.”
+
+- “When a thread invokes a Java method, the JVM creates and pushes a new frame onto the thread’s stack. 
+This new frame then becomes the current frame. As the method executes, it uses the frame to store parameters,
+local variables, intermediate computations, and other data.”
+
+- “The method that is currently being executed by a thread is the thread’s current method. The stack frame for
+the current method is the current frame. The class in which the current method is defined is called the current
+class, and the current class’s constant pool is the current constant pool. As it executes a method, the JVM
+keeps track of the current class and current constant pool. When the JVM encounters instructions that operate
+on data stored in the stack frame, it performs those operations on the current frame.”
+                    
+                                            What is a “Stack Frame”?
+- “The stack frame has three parts: local variables, operand stack, and frame data alias Constant pool reference.”
+            
+                                            Summary to this point
+I can summarize what we’ve learned about stacks and stack frames like this:
+
+- Each JVM thread has a private stack, created at the same time as the thread.
+- A stack stores frames, also called “stack frames.”
+- A stack frame is created every time a new method is called.
+
+            We can also say this about what happens when a Java/Scala/JVM method is invoked:
+
+- When a method is invoked, a new stack frame is created to contain information about that method.
+- Stack frames can have different sizes, depending on the method’s parameters, local variables, and algorithm.
+- As the method is executed, the code can only access the values in the current stack frame, 
+which you can visualize as being the top-most stack frame.
+

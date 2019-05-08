@@ -1,0 +1,13 @@
+Q1 - Define static method, variable and class. What are the use of Static class in java?
+Q1 - What good are static classes?
+
+A. - Java has **static nested classes** but it sounds like you're looking for a top-level static class.
+   Java has no way of making a top-level class static. but you can make a class static(without writing the static keyword) following these rules
+    
+    1) Declare your class final - Prevents extension of the class since extending a static class makes no sense
+    2) Make the constructor private - Prevents instantiation by client code as it makes no sense to instantiate a static class
+    3) Make all the members and functions of the class static - Since the class cannot be instantiated no instance methods can be called or instance fields accessed
+    4) Note that the compiler will not prevent you from declaring an instance (non-static) member. The issue will only show up if you attempt to call the instance member
+
+   - A good use of a static class is in defining one-off, ***utility and/or library classes*** where instantiation would not make sense.
+   - A great example is the Math class that contains some mathematical constants such as PI and E and simply provides mathematical calculations.

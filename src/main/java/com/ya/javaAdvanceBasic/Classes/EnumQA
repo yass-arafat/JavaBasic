@@ -1,0 +1,21 @@
+Q derived from http://www.java67.com/2013/07/15-java-enum-interview-questions-amswers-for-experienced-programmers.html
+
+Q. 1) Can Enum implement interface in Java?
+A. - It is known as Extensible enum. Enum in Java can implement the interface and override any method like normal class It’s also worth noting that Enum
+     in java implicitly implements both Serializable and Comparable interface. 
+   - Check the 2nd ans. how to implement an interface through 
+     enum https://stackoverflow.com/questions/2709593/why-would-an-enum-implement-an-interface
+
+
+Q. 2) Why would an Enum implement an Interface?
+A. - Basically what we can do with enum is that we can use enum name like this (e.g - Day.SUNDAY, Day.MONDAY etc ) or
+     we can use their key value when enum is declared in a key value pair like this (CUSTOMER("customer", 5), SUPER_USER("super", 12)
+     and BY IMPLEMENTING an interface in enum we can do method operations too. If you see the above link you will see that
+     here in enum class PLUS object is implemented it's interface according to it's own way, MINUS object is also implemented
+     according to it's own way. This facility we can achieve through implementing an interface in ENUM
+
+Q. 3) Can Enum extends class in Java?
+A. - No, Enum can not extend class in Java. Since all Enum by default extend abstract base class java.lang.Enum,
+     obviously they can not extend another class, because Java doesn't support multiple inheritance for classes.
+     Because of extending java.lang.Enum class, all enum gets methods like ordinal(), values() or valueOf().
+
